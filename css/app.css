@@ -26,6 +26,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    max-width: 1170px;
 }
 
 h1 {
@@ -38,8 +39,8 @@ h1 {
  */
 
 .deck {
-    width: 660px;
-    min-height: 680px;
+    width: 300px;
+    min-height: 300px;
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
     padding: 32px;
     border-radius: 10px;
@@ -52,8 +53,8 @@ h1 {
 }
 
 .deck .card {
-    height: 125px;
-    width: 125px;
+    height: 50px;
+    width: 50px;
     background: #2e3d49;
     font-size: 0;
     color: #ffffff;
@@ -114,7 +115,7 @@ h1 {
     cursor: pointer;
 }
 
-/*Bakground*/
+/*Background*/
 .modal {
   display: none; /*Hidden by default*/
   position: fixed; /*Stay in place*/
@@ -138,3 +139,29 @@ h1 {
   border: 1px solid #888;
   width: 80%;
 }
+
+/*Responsive*/
+
+
+@media all and (min-width: 600px) {
+  .container {
+    width: 90%; }
+    .deck {
+      width: 500px;
+      min-height: 500px;}
+      .deck .card {
+          height: 100px;
+          width: 100px;}}
+
+@media all and (min-width: 750px) {
+  .container {
+    width: 95%; }
+  .container h1 {
+    font-size: 3.5rem; }
+    .deck {
+      width: 650px;
+      min-height: 650px;}
+
+      .deck .card {
+          height: 125px;
+          width: 125px;}}
