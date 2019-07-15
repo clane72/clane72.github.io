@@ -5,7 +5,7 @@
 
 For the **Restaurant Reviews** project, I have converted a static webpage into a fully responsive mobile web application that was optimized for performance, accessibility, and offline access.
 
-**Live Demo** [Click Here](https://clane72.github.io/udacity-restaurant-review-app/)
+**Live Demo** [Click Here](https://clane72.github.io/)
 
 ### Getting Started
 
