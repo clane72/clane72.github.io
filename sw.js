@@ -46,7 +46,6 @@ self.addEventListener('install', function(event) {
 
 self.addEventListener('activate', function(event) {
     // console.log('ServiceWorker activated');
-
     event.waitUntil(
         caches.keys().then(cacheNames => {
             return Promise.all(cacheNames.map(thisCacheName => {
@@ -59,15 +58,29 @@ self.addEventListener('activate', function(event) {
         return self.clients.claim();
 })
 
+/**OLD CODE
 self.addEventListener('fetch', function(event) {
-    //    console.log('ServiceWorker fetching', event.request.url);
-
+  console.log(event.request.url);
       event.respondWith(
         caches.match(event.request)
         .then(function(response) {
           return response || fetch(event.request);
           })
-        );
+        );**/
+/**NEW CODE FROM HERE: https://developers.google.com/web/fundamentals/primers/service-workers/**/
+  self.addEventListener('fetch', function(event) {
+    console.log(event.request.url);
+      event.respondWith(
+        caches.match(event.request)
+          .then(function(response) {
+            // Cache hit - return response
+            if (response) {
+              return response;
+            }
+            return fetch(event.request);
+          }
+        )
+      );
+    });
 
-
-}); //end fetch event
+ //end fetch event
